@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExcelCompare
@@ -92,7 +91,7 @@ namespace ExcelCompare
                 MoqikakaExcel excelB = new MoqikakaExcel(pathB);
 
                 //异步加载Excel对象
-                var task = Task.Run(() =>
+                Action asyncAction = new Action(() => 
                 {
                     excelA.TryLoad();
                     excelB.TryLoad();
@@ -120,6 +119,7 @@ namespace ExcelCompare
                     });
                 });
 
+                asyncAction.BeginInvoke(null, null);
             }
 
             //保存路径
