@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.btnLoad = new System.Windows.Forms.Button();
             this.linkOpenPathA = new System.Windows.Forms.LinkLabel();
             this.lblClient = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             // btnLoad
             // 
             this.btnLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLoad.Location = new System.Drawing.Point(1063, 10);
+            this.btnLoad.Location = new System.Drawing.Point(1059, 11);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(84, 57);
             this.btnLoad.TabIndex = 43;
@@ -79,9 +80,9 @@
             this.lblClient.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblClient.Location = new System.Drawing.Point(22, 19);
             this.lblClient.Name = "lblClient";
-            this.lblClient.Size = new System.Drawing.Size(41, 12);
+            this.lblClient.Size = new System.Drawing.Size(47, 12);
             this.lblClient.TabIndex = 38;
-            this.lblClient.Text = "路径A:";
+            this.lblClient.Text = "主目录:";
             // 
             // txtPathA
             // 
@@ -89,9 +90,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPathA.ForeColor = System.Drawing.Color.Gray;
-            this.txtPathA.Location = new System.Drawing.Point(69, 15);
+            this.txtPathA.Location = new System.Drawing.Point(86, 15);
             this.txtPathA.Name = "txtPathA";
-            this.txtPathA.Size = new System.Drawing.Size(939, 21);
+            this.txtPathA.Size = new System.Drawing.Size(922, 21);
             this.txtPathA.TabIndex = 37;
             this.txtPathA.Tag = "ClientPath";
             this.txtPathA.DoubleClick += new System.EventHandler(this.txtPathA_DoubleClick);
@@ -118,9 +119,9 @@
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(20, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(59, 12);
             this.label1.TabIndex = 45;
-            this.label1.Text = "路径B:";
+            this.label1.Text = "对比目录:";
             // 
             // txtPathB
             // 
@@ -128,9 +129,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPathB.ForeColor = System.Drawing.Color.Gray;
-            this.txtPathB.Location = new System.Drawing.Point(69, 47);
+            this.txtPathB.Location = new System.Drawing.Point(85, 47);
             this.txtPathB.Name = "txtPathB";
-            this.txtPathB.Size = new System.Drawing.Size(939, 21);
+            this.txtPathB.Size = new System.Drawing.Size(923, 21);
             this.txtPathB.TabIndex = 44;
             this.txtPathB.Tag = "ClientPath";
             this.txtPathB.DoubleClick += new System.EventHandler(this.txtPath2_DoubleClick);
@@ -144,7 +145,7 @@
             this.treeViewExcels.Location = new System.Drawing.Point(5, 84);
             this.treeViewExcels.Name = "treeViewExcels";
             this.treeViewExcels.ShowNodeToolTips = true;
-            this.treeViewExcels.Size = new System.Drawing.Size(240, 536);
+            this.treeViewExcels.Size = new System.Drawing.Size(204, 536);
             this.treeViewExcels.TabIndex = 47;
             this.treeViewExcels.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeViewExcels_NodeMouseClick);
             this.treeViewExcels.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
@@ -155,10 +156,10 @@
             this.tabControlA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlA.Controls.Add(this.tabPageA);
-            this.tabControlA.Location = new System.Drawing.Point(251, 84);
+            this.tabControlA.Location = new System.Drawing.Point(215, 84);
             this.tabControlA.Name = "tabControlA";
             this.tabControlA.SelectedIndex = 0;
-            this.tabControlA.Size = new System.Drawing.Size(1010, 260);
+            this.tabControlA.Size = new System.Drawing.Size(1038, 260);
             this.tabControlA.TabIndex = 48;
             // 
             // tabPageA
@@ -166,9 +167,9 @@
             this.tabPageA.Location = new System.Drawing.Point(4, 22);
             this.tabPageA.Name = "tabPageA";
             this.tabPageA.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageA.Size = new System.Drawing.Size(1002, 234);
+            this.tabPageA.Size = new System.Drawing.Size(1030, 234);
             this.tabPageA.TabIndex = 0;
-            this.tabPageA.Text = "路径A";
+            this.tabPageA.Text = "主目录";
             this.tabPageA.UseVisualStyleBackColor = true;
             // 
             // tabControlB
@@ -176,10 +177,10 @@
             this.tabControlB.AllowDrop = true;
             this.tabControlB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlB.Controls.Add(this.tabPageB);
-            this.tabControlB.Location = new System.Drawing.Point(251, 350);
+            this.tabControlB.Location = new System.Drawing.Point(215, 350);
             this.tabControlB.Name = "tabControlB";
             this.tabControlB.SelectedIndex = 0;
-            this.tabControlB.Size = new System.Drawing.Size(1010, 270);
+            this.tabControlB.Size = new System.Drawing.Size(1038, 270);
             this.tabControlB.TabIndex = 49;
             // 
             // tabPageB
@@ -187,15 +188,15 @@
             this.tabPageB.Location = new System.Drawing.Point(4, 22);
             this.tabPageB.Name = "tabPageB";
             this.tabPageB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageB.Size = new System.Drawing.Size(1002, 244);
+            this.tabPageB.Size = new System.Drawing.Size(1030, 244);
             this.tabPageB.TabIndex = 0;
-            this.tabPageB.Text = "路径B";
+            this.tabPageB.Text = "对比目录";
             this.tabPageB.UseVisualStyleBackColor = true;
             // 
             // btnPreDiff
             // 
             this.btnPreDiff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPreDiff.Location = new System.Drawing.Point(1171, 9);
+            this.btnPreDiff.Location = new System.Drawing.Point(1171, 12);
             this.btnPreDiff.Name = "btnPreDiff";
             this.btnPreDiff.Size = new System.Drawing.Size(77, 23);
             this.btnPreDiff.TabIndex = 50;
@@ -231,6 +232,7 @@
             this.Controls.Add(this.linkOpenPathA);
             this.Controls.Add(this.lblClient);
             this.Controls.Add(this.txtPathA);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Excel Compare";

@@ -124,9 +124,14 @@ namespace Common.Excel
         {
             if (table == null) return null;
 
-            //读取并删除表名行
-            //table.TableName = table.Rows[0][0].ToString();
-            //table.Rows.RemoveAt(0);
+            DataRow row0 = table.Rows[0];
+
+            for (int i = 0; i < row0.ItemArray.Length; i++)
+            {
+                table.Columns[i].ColumnName = row0[i].ToString();
+            }
+
+            table.Rows.RemoveAt(0);
 
             return table;
         }

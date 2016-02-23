@@ -197,7 +197,7 @@ namespace ExcelCompare
             {
                 foreach (DataGridViewCell item in dgA.Rows[i].Cells)
                 {
-                    if (item.Style.BackColor == Color.Red)
+                    if (item.Style.BackColor != Color.Empty)
                     {
                         dgA.FirstDisplayedScrollingRowIndex = i;
                         dgA.CurrentCell = item;
@@ -229,7 +229,7 @@ namespace ExcelCompare
             {
                 foreach (DataGridViewCell item in dgA.Rows[i].Cells)
                 {
-                    if (item.Style.BackColor == Color.Red)
+                    if (item.Style.BackColor != Color.Empty)
                     {
                         dgA.FirstDisplayedScrollingRowIndex = i;
                         dgA.CurrentCell = item;
@@ -400,7 +400,17 @@ namespace ExcelCompare
             {
                 foreach (DataGridViewCell cell in dgA.Rows[rowIndex].Cells)
                 {
-                    cell.Style.BackColor = Color.Red;
+                    cell.Style.BackColor = Color.Green;
+                }
+
+                return;
+            }
+
+            if (rowIndex > dgA.Rows.Count - 1)
+            {
+                foreach (DataGridViewCell cell in dgB.Rows[rowIndex].Cells)
+                {
+                    cell.Style.BackColor = Color.Green;
                 }
 
                 return;
@@ -413,13 +423,15 @@ namespace ExcelCompare
             {
                 if (i > rowB.Cells.Count - 1)
                 {
-                    rowA.Cells[i].Style.BackColor = Color.Red;
+                    rowA.Cells[i].Style.BackColor = Color.Green;
+                    //rowB.Cells[i].Style.BackColor = Color.DarkGray;
                     continue;
                 }
 
                 if (!IsStringEqual(rowA.Cells[i].Value, rowB.Cells[i].Value))
                 {
-                    rowA.Cells[i].Style.BackColor = Color.Red;
+                    rowA.Cells[i].Style.BackColor = Color.Gray;
+                    rowB.Cells[i].Style.BackColor = Color.Red;
                 }
             }
         }
