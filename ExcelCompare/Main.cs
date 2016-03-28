@@ -14,7 +14,7 @@ namespace ExcelCompare
     using System.Diagnostics;
     using System.IO;
     using Util;
-    using Util.Config;
+    using Util.Regedit;
 
     public partial class Main : Form
     {
@@ -267,8 +267,8 @@ namespace ExcelCompare
 
         private void InitControls()
         {
-            txtPathA.Text = ConfigUtil.GetAppSetting("PathA");
-            txtPathB.Text = ConfigUtil.GetAppSetting("PathB");
+            txtPathA.Text = RegeditHelper.GetRegistryValue(RegistryRootEnum.CurrentUser, "SOFTWARE\\ExcelCompare", "PathA");
+            txtPathB.Text = RegeditHelper.GetRegistryValue(RegistryRootEnum.CurrentUser, "SOFTWARE\\ExcelCompare", "PathB");
         }
 
         private void OpenDirectory(String path)
@@ -281,8 +281,8 @@ namespace ExcelCompare
 
         private void SavePath()
         {
-            ConfigUtil.UpdateAppSetting("PathA", txtPathA.Text);
-            ConfigUtil.UpdateAppSetting("PathB", txtPathB.Text);
+            RegeditHelper.SetRegistryValue(RegistryRootEnum.CurrentUser, "SOFTWARE\\ExcelCompare", "PathA", txtPathA.Text);
+            RegeditHelper.SetRegistryValue(RegistryRootEnum.CurrentUser, "SOFTWARE\\ExcelCompare", "PathB", txtPathB.Text);
         }
 
         private TreeNode[] GetSheetNodesByExcelFile(MoqikakaExcel excelA, MoqikakaExcel excelB)
